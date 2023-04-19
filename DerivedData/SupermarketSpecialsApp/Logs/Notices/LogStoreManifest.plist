@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>181D3EB7-FBCA-4EEB-A026-213F060FCE9E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>181D3EB7-FBCA-4EEB-A026-213F060FCE9E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>eyJ0eXBlIjp7ImJsdWVwcmludFByb3ZpZGVyIjp7fX0sImJsdWVwcmludFByb3ZpZGVyX3Byb3ZpZGVyRmlsZVBhdGhTdHJpbmciOiJcL1VzZXJzXC9pYWxidXF1ZXJxdWVcL3Byb2plY3RzXC9pb3NcL3BlcnNvbmFsXC9TdXBlcm1hcmtldFNwZWNpYWxzQXBwXC9TdXBlcm1hcmtldFNwZWNpYWxzQXBwLnhjb2RlcHJvaiJ9</string>
+			<key>timeStartedRecording</key>
+			<real>703568133.19396198</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build for Previews SupermarketSpecialsApp</string>
+			<key>uniqueIdentifier</key>
+			<string>181D3EB7-FBCA-4EEB-A026-213F060FCE9E</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
