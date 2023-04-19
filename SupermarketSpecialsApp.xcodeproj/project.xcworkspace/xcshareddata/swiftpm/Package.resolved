@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networklayerspm",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:intiMRA/NetworkLayerSPM.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ebac3e225e05d1c0bb50ad6856948fca079a7c2e"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10FB92729EFA9B1002454BD /* EndpointUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92629EFA9B1002454BD /* EndpointUrls.swift */; };
+		A10FB92A29EFAA2D002454BD /* NetworkLayerSPM in Frameworks */ = {isa = PBXBuildFile; productRef = A10FB92929EFAA2D002454BD /* NetworkLayerSPM */; };
+		A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92B29EFADC2002454BD /* PagesView.swift */; };
+		A10FB92E29EFADD5002454BD /* PagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92D29EFADD5002454BD /* PagesViewModel.swift */; };
 		A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */; };
 		A18D54E029EF990200E7A697 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54DF29EF990200E7A697 /* ContentView.swift */; };
 		A18D54E229EF990300E7A697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18D54E129EF990300E7A697 /* Assets.xcassets */; };
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A10FB92629EFA9B1002454BD /* EndpointUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointUrls.swift; sourceTree = "<group>"; };
+		A10FB92B29EFADC2002454BD /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
+		A10FB92D29EFADD5002454BD /* PagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewModel.swift; sourceTree = "<group>"; };
 		A18D54DA29EF990200E7A697 /* SupermarketSpecialsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupermarketSpecialsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppApp.swift; sourceTree = "<group>"; };
 		A18D54DF29EF990200E7A697 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10FB92A29EFAA2D002454BD /* NetworkLayerSPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10FB92429EFA97C002454BD /* PagesView */ = {
+			isa = PBXGroup;
+			children = (
+				A10FB92B29EFADC2002454BD /* PagesView.swift */,
+				A10FB92D29EFADD5002454BD /* PagesViewModel.swift */,
+			);
+			path = PagesView;
+			sourceTree = "<group>";
+		};
+		A10FB92529EFA98F002454BD /* API Layer */ = {
+			isa = PBXGroup;
+			children = (
+				A10FB92629EFA9B1002454BD /* EndpointUrls.swift */,
+			);
+			path = "API Layer";
+			sourceTree = "<group>";
+		};
 		A18D54D129EF990200E7A697 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +119,8 @@
 		A18D54DC29EF990200E7A697 /* SupermarketSpecialsApp */ = {
 			isa = PBXGroup;
 			children = (
+				A10FB92529EFA98F002454BD /* API Layer */,
+				A10FB92429EFA97C002454BD /* PagesView */,
 				A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */,
 				A18D54DF29EF990200E7A697 /* ContentView.swift */,
 				A18D54E129EF990300E7A697 /* Assets.xcassets */,
@@ -143,6 +170,9 @@
 			dependencies = (
 			);
 			name = SupermarketSpecialsApp;
+			packageProductDependencies = (
+				A10FB92929EFAA2D002454BD /* NetworkLayerSPM */,
+			);
 			productName = SupermarketSpecialsApp;
 			productReference = A18D54DA29EF990200E7A697 /* SupermarketSpecialsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +245,9 @@
 				Base,
 			);
 			mainGroup = A18D54D129EF990200E7A697;
+			packageReferences = (
+				A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */,
+			);
 			productRefGroup = A18D54DB29EF990200E7A697 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,6 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10FB92729EFA9B1002454BD /* EndpointUrls.swift in Sources */,
+				A10FB92E29EFADD5002454BD /* PagesViewModel.swift in Sources */,
+				A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */,
 				A18D54E029EF990200E7A697 /* ContentView.swift in Sources */,
 				A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */,
 			);
@@ -577,6 +613,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:intiMRA/NetworkLayerSPM.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A10FB92929EFAA2D002454BD /* NetworkLayerSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */;
+			productName = NetworkLayerSPM;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A18D54D229EF990200E7A697 /* Project object */;
 }
