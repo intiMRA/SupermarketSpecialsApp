@@ -23,17 +23,27 @@ enum Supemarkets: String {
 struct PagesView: View {
     @StateObject var viewModel = PagesViewModel()
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 20) {
-                if let items = viewModel.items?.items {
-                    ForEach(0..<items.count, id: \.self) { index in
-                        let itemGroup = items[index]
-                        ItemgroupView(items: itemGroup)
-                            .padding(.horizontal, 16)
+        VStack {
+            ScrollView {
+                LazyVStack(spacing: 20) {
+                    if let items = viewModel.items?.items {
+                        ForEach(0..<items.count, id: \.self) { index in
+                            let itemGroup = items[index]
+                            ItemgroupView(items: itemGroup)
+                                .padding(.horizontal, 16)
+                        }
+                    } else {
+                        Text("loading..")
                     }
-                } else {
-                    Text("loading..")
                 }
+            }
+            Button {
+                Task {
+                    await viewModel.nextPage()
+                }
+                
+            } label: {
+                Text("next")
             }
         }
         .task {

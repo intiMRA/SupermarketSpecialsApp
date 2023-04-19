@@ -44,13 +44,19 @@ import Foundation
 @MainActor
 class PagesViewModel: ObservableObject {
     @Published var items: Items?
+    @Published var page = 1
     
     func fetchPage() async {
-        let request = NetworkLayerRequest(urlBuilder: EndpointUrls.pages(newWorlsIds: ["421d563e-ce40-4d5c-a79c-4afb521fc5b0"], packNSaveIds: ["e1925ea7-01bc-4358-ae7c-c6502da5ab12"], pageNumber: 2), httpMethod: .GET)
+        let request = NetworkLayerRequest(urlBuilder: EndpointUrls.pages(newWorlsIds: ["421d563e-ce40-4d5c-a79c-4afb521fc5b0"], packNSaveIds: ["e1925ea7-01bc-4358-ae7c-c6502da5ab12"], pageNumber: page), httpMethod: .GET)
         do {
             items = try await NetworkLayer.defaultNetworkLayer.request(request)
         } catch {
             print(error)
         }
+    }
+    
+    func nextPage() async {
+        page += 1
+        await self.fetchPage()
     }
 }

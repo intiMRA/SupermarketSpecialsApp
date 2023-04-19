@@ -3,4 +3,101 @@
    uuid = "8FABCBDE-A258-4901-99AC-1BCA7B7F84A6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B7FE26E-A4C8-472C-AA63-47A538461DA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SupermarketSpecialsApp/PagesView/PagesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchPage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7055BC5D-A6B7-4E89-8B99-B477B7C5A335"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SupermarketSpecialsApp/PagesView/PagesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "nextPage()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7055BC5D-A6B7-4E89-8B99-B477B7C5A335 - 8efad29bcb7b2eb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for SupermarketSpecialsApp.PagesViewModel.nextPage() async -&gt; ()"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/SupermarketSpecialsApp/PagesView/PagesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "7055BC5D-A6B7-4E89-8B99-B477B7C5A335 - 5381a3af4ea34846"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for SupermarketSpecialsApp.PagesViewModel.nextPage() async -&gt; ()"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/SupermarketSpecialsApp/PagesView/PagesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "7055BC5D-A6B7-4E89-8B99-B477B7C5A335 - 79039032ce09aa96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SupermarketSpecialsApp.PagesViewModel.nextPage() async -&gt; ()"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/SupermarketSpecialsApp/PagesView/PagesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B594D356-E831-4A73-9623-0631ADE0D973"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SupermarketSpecialsApp/PagesView/PagesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "fetchPage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
