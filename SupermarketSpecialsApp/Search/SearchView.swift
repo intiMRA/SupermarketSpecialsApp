@@ -13,12 +13,13 @@ struct SearchView: View {
         VStack {
             ScrollView {
                 LazyVStack(spacing: 20) {
-                    if let items = viewModel.items?.items {
+                    if let items = viewModel.items?.items, !viewModel.isLoading {
                         ForEach(0..<items.count, id: \.self) { index in
                             let itemGroup = items[index]
                             ItemgroupView(items: itemGroup)
                                 .padding(.horizontal, 16)
                         }
+                        .searchable(text: $viewModel.query)
                     } else {
                         Text("loading..")
                     }
@@ -26,7 +27,7 @@ struct SearchView: View {
             }
         }
         .task {
-            await viewModel.search()
+            await viewModel.search(query: viewModel.query)
         }
     }
 }

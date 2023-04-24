@@ -12,11 +12,15 @@ struct SupermarketSpecialsAppApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                PagesView()
+                NavigationView{
+                    PagesView()
+                }
                     .tabItem {
                         Text("pages")
                     }
-                SearchView()
+                NavigationView{
+                    SearchView()
+                }
                     .tabItem {
                         Text("search")
                     }
