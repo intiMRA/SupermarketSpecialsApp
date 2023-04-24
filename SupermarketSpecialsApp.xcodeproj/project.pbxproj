@@ -18,8 +18,9 @@
 		A12399DC29F633CD002A5E1C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399DB29F633CD002A5E1C /* SearchView.swift */; };
 		A12399DF29F63412002A5E1C /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399DE29F63412002A5E1C /* ItemsModel.swift */; };
 		A12399E129F635D1002A5E1C /* SupermarketNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E029F635D1002A5E1C /* SupermarketNames.swift */; };
+		A12399E429F69837002A5E1C /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E329F69837002A5E1C /* ItemDetailsView.swift */; };
+		A12399E729F69F83002A5E1C /* Destinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E629F69F83002A5E1C /* Destinations.swift */; };
 		A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */; };
-		A18D54E029EF990200E7A697 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54DF29EF990200E7A697 /* ContentView.swift */; };
 		A18D54E229EF990300E7A697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18D54E129EF990300E7A697 /* Assets.xcassets */; };
 		A18D54E529EF990300E7A697 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18D54E429EF990300E7A697 /* Preview Assets.xcassets */; };
 		A18D54EF29EF990400E7A697 /* SupermarketSpecialsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54EE29EF990400E7A697 /* SupermarketSpecialsAppTests.swift */; };
@@ -55,9 +56,10 @@
 		A12399DB29F633CD002A5E1C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A12399DE29F63412002A5E1C /* ItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = "<group>"; };
 		A12399E029F635D1002A5E1C /* SupermarketNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketNames.swift; sourceTree = "<group>"; };
+		A12399E329F69837002A5E1C /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
+		A12399E629F69F83002A5E1C /* Destinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destinations.swift; sourceTree = "<group>"; };
 		A18D54DA29EF990200E7A697 /* SupermarketSpecialsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupermarketSpecialsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppApp.swift; sourceTree = "<group>"; };
-		A18D54DF29EF990200E7A697 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A18D54E129EF990300E7A697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A18D54E429EF990300E7A697 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A18D54EA29EF990400E7A697 /* SupermarketSpecialsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketSpecialsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 		A10FB92429EFA97C002454BD /* PagesView */ = {
 			isa = PBXGroup;
 			children = (
+				A12399E229F69814002A5E1C /* Item details */,
 				A10FB92B29EFADC2002454BD /* PagesView.swift */,
 				A10FB92D29EFADD5002454BD /* PagesViewModel.swift */,
 			);
@@ -147,6 +150,22 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		A12399E229F69814002A5E1C /* Item details */ = {
+			isa = PBXGroup;
+			children = (
+				A12399E329F69837002A5E1C /* ItemDetailsView.swift */,
+			);
+			path = "Item details";
+			sourceTree = "<group>";
+		};
+		A12399E529F69F6F002A5E1C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A12399E629F69F83002A5E1C /* Destinations.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A18D54D129EF990200E7A697 = {
 			isa = PBXGroup;
 			children = (
@@ -170,12 +189,12 @@
 		A18D54DC29EF990200E7A697 /* SupermarketSpecialsApp */ = {
 			isa = PBXGroup;
 			children = (
+				A12399E529F69F6F002A5E1C /* Utils */,
 				A12399D329F63302002A5E1C /* Components */,
 				A12399D029F632BF002A5E1C /* Search */,
 				A10FB92529EFA98F002454BD /* API Layer */,
 				A10FB92429EFA97C002454BD /* PagesView */,
 				A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */,
-				A18D54DF29EF990200E7A697 /* ContentView.swift */,
 				A18D54E129EF990300E7A697 /* Assets.xcassets */,
 				A18D54E329EF990300E7A697 /* Preview Content */,
 			);
@@ -349,9 +368,10 @@
 				A12399D229F632D9002A5E1C /* SearchViewModel.swift in Sources */,
 				A10FB92729EFA9B1002454BD /* EndpointUrls.swift in Sources */,
 				A12399D729F63344002A5E1C /* ItemView.swift in Sources */,
+				A12399E429F69837002A5E1C /* ItemDetailsView.swift in Sources */,
 				A10FB92E29EFADD5002454BD /* PagesViewModel.swift in Sources */,
+				A12399E729F69F83002A5E1C /* Destinations.swift in Sources */,
 				A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */,
-				A18D54E029EF990200E7A697 /* ContentView.swift in Sources */,
 				A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */,
 				A12399DA29F633A6002A5E1C /* NoTruncationText.swift in Sources */,
 				A12399E129F635D1002A5E1C /* SupermarketNames.swift in Sources */,

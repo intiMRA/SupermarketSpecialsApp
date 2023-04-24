@@ -9,14 +9,22 @@ import SwiftUI
 
 struct PagesView: View {
     @StateObject var viewModel = PagesViewModel()
+    @EnvironmentObject var router: Router
     var body: some View {
         VStack {
+            NavigationLink(value: PagesViewDestinations.itemDetails) {
+                EmptyView()
+            }
+            
             ScrollView {
                 LazyVStack(spacing: 20) {
                     if let items = viewModel.items?.items {
                         ForEach(0..<items.count, id: \.self) { index in
                             let itemGroup = items[index]
-                            ItemgroupView(items: itemGroup)
+                            ItemgroupView(items: itemGroup) { itemId in
+                                viewModel.tapAction(itemId)
+                                router.stack.append(PagesViewDestinations.itemDetails)
+                            }
                                 .padding(.horizontal, 16)
                         }
                     } else {
@@ -35,6 +43,13 @@ struct PagesView: View {
         }
         .task {
             await viewModel.fetchPage()
+        }
+        .navigationDestination(for: PagesViewDestinations.self) { nextView in
+            switch nextView {
+            case .itemDetails:
+                ItemDetailsView(item: viewModel.selectedItem!, otherItems: viewModel.otherItems!)
+                    .environmentObject(router)
+            }
         }
     }
 }

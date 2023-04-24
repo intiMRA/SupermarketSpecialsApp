@@ -16,7 +16,7 @@ struct SearchView: View {
                     if let items = viewModel.items?.items, !viewModel.isLoading {
                         ForEach(0..<items.count, id: \.self) { index in
                             let itemGroup = items[index]
-                            ItemgroupView(items: itemGroup)
+                            ItemgroupView(items: itemGroup, tapAction: { _ in })
                                 .padding(.horizontal, 16)
                         }
                         .searchable(text: $viewModel.query)

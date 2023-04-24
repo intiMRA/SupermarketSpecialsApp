@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ItemViewModel {
+    let itemId: String
     let name: String
     let photoUrl: String
     let price: String
@@ -18,9 +19,12 @@ struct ItemViewModel {
 struct ItemView: View {
     let itemModel: ItemViewModel
     let isGrid: Bool
+    let tapAction: (String) -> Void
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            tapAction(itemModel.itemId)
+        }) {
             VStack {
                 if isGrid {
                     VStack(spacing: 20) {
