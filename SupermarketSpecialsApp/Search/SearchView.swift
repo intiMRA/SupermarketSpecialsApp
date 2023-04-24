@@ -1,14 +1,14 @@
 //
-//  PagesView.swift
+//  SearchView.swift
 //  SupermarketSpecialsApp
 //
-//  Created by ialbuquerque on 19/04/23.
+//  Created by ialbuquerque on 24/04/23.
 //
 
 import SwiftUI
 
-struct PagesView: View {
-    @StateObject var viewModel = PagesViewModel()
+struct SearchView: View {
+    @StateObject var viewModel = SearchViewModel()
     var body: some View {
         VStack {
             ScrollView {
@@ -24,17 +24,9 @@ struct PagesView: View {
                     }
                 }
             }
-            Button {
-                Task {
-                    await viewModel.nextPage()
-                }
-                
-            } label: {
-                Text("next")
-            }
         }
         .task {
-            await viewModel.fetchPage()
+            await viewModel.search()
         }
     }
 }

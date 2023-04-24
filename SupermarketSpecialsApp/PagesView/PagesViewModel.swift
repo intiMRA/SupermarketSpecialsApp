@@ -5,49 +5,15 @@
 //  Created by ialbuquerque on 19/04/23.
 //
 import NetworkLayerSPM
-
-struct Item: Codable {
-    let brand: String
-    let category: String
-    let itemId: String
-    let name: String
-    let photoUrl: String
-    let price: String
-    let size: String
-    let supermarket: String
-    let supermarketId: String?
-}
-
-struct Items: Codable {
-    let items: [[Item]]
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let items = try container.decode([[Item]].self, forKey: .items)
-        self.items = items.map({ itemGroup in
-            itemGroup.map { item in
-                    .init(brand: item.brand,
-                          category: item.category,
-                          itemId: UUID().uuidString,
-                          name: item.name,
-                          photoUrl: item.photoUrl,
-                          price: item.price,
-                          size: item.size,
-                          supermarket: item.supermarket,
-                          supermarketId: item.supermarketId)
-            }
-        })
-    }
-}
-
 import Foundation
+
 @MainActor
 class PagesViewModel: ObservableObject {
-    @Published var items: Items?
+    @Published var items: ItemsModel?
     @Published var page = 1
     
     func fetchPage() async {
-        let request = NetworkLayerRequest(urlBuilder: EndpointUrls.pages(newWorlsIds: ["421d563e-ce40-4d5c-a79c-4afb521fc5b0"], packNSaveIds: ["e1925ea7-01bc-4358-ae7c-c6502da5ab12"], pageNumber: page), httpMethod: .GET)
+        let request = NetworkLayerRequest(urlBuilder: EndpointUrls.pages(newWorlsIds: ["89ba1656-0ad7-4af0-8694-08bf335e99b9"], packNSaveIds: ["21ecaaed-0749-4492-985e-4bb7ba43d59c"], pageNumber: page), httpMethod: .GET)
         do {
             items = try await NetworkLayer.defaultNetworkLayer.request(request)
         } catch {
