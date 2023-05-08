@@ -47,8 +47,11 @@ struct PagesView: View {
         .navigationDestination(for: PagesViewDestinations.self) { nextView in
             switch nextView {
             case .itemDetails:
-                ItemDetailsView(item: viewModel.selectedItem!, otherItems: viewModel.otherItems!)
-                    .environmentObject(router)
+                if let currentItem = viewModel.selectedItem, let itemGroup = viewModel.otherItems {
+                    ItemDetailsView(viewModel: ItemDetailsViewModel(currentItem: currentItem, itemGroup: itemGroup))
+                        .padding(.horizontal, 16)
+                        .environmentObject(router)
+                }
             }
         }
     }

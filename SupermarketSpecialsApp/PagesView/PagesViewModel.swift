@@ -31,7 +31,7 @@ class PagesViewModel: ObservableObject {
     
     func tapAction(_ itemId: String) {
         let itemGroup = items?.items.filter({ $0.contains { $0.itemId == itemId } })
-        otherItems = itemGroup?.first
-        selectedItem = otherItems?.first(where: { $0.itemId == itemId })
+        selectedItem = itemGroup?.first?.first(where: { $0.itemId == itemId })
+        otherItems = itemGroup?.first?.filter { $0.itemId != itemId }
     }
 }

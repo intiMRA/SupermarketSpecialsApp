@@ -20,12 +20,14 @@
 		A12399E129F635D1002A5E1C /* SupermarketNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E029F635D1002A5E1C /* SupermarketNames.swift */; };
 		A12399E429F69837002A5E1C /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E329F69837002A5E1C /* ItemDetailsView.swift */; };
 		A12399E729F69F83002A5E1C /* Destinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E629F69F83002A5E1C /* Destinations.swift */; };
+		A12399E929FB2887002A5E1C /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E829FB2887002A5E1C /* ItemDetailsViewModel.swift */; };
 		A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */; };
 		A18D54E229EF990300E7A697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18D54E129EF990300E7A697 /* Assets.xcassets */; };
 		A18D54E529EF990300E7A697 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18D54E429EF990300E7A697 /* Preview Assets.xcassets */; };
 		A18D54EF29EF990400E7A697 /* SupermarketSpecialsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54EE29EF990400E7A697 /* SupermarketSpecialsAppTests.swift */; };
 		A18D54F929EF990400E7A697 /* SupermarketSpecialsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54F829EF990400E7A697 /* SupermarketSpecialsAppUITests.swift */; };
 		A18D54FB29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54FA29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift */; };
+		A1D3162F2A08ADE200AF1739 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D3162E2A08ADE200AF1739 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		A12399E029F635D1002A5E1C /* SupermarketNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketNames.swift; sourceTree = "<group>"; };
 		A12399E329F69837002A5E1C /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		A12399E629F69F83002A5E1C /* Destinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destinations.swift; sourceTree = "<group>"; };
+		A12399E829FB2887002A5E1C /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		A18D54DA29EF990200E7A697 /* SupermarketSpecialsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupermarketSpecialsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppApp.swift; sourceTree = "<group>"; };
 		A18D54E129EF990300E7A697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 		A18D54F429EF990400E7A697 /* SupermarketSpecialsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketSpecialsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18D54F829EF990400E7A697 /* SupermarketSpecialsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppUITests.swift; sourceTree = "<group>"; };
 		A18D54FA29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A1D3162E2A08ADE200AF1739 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		A1E171012A01CB3900B7D577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				A12399E329F69837002A5E1C /* ItemDetailsView.swift */,
+				A12399E829FB2887002A5E1C /* ItemDetailsViewModel.swift */,
 			);
 			path = "Item details";
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 		A18D54DC29EF990200E7A697 /* SupermarketSpecialsApp */ = {
 			isa = PBXGroup;
 			children = (
+				A1D3162D2A08ADCB00AF1739 /* Store */,
+				A1E171012A01CB3900B7D577 /* Info.plist */,
 				A12399E529F69F6F002A5E1C /* Utils */,
 				A12399D329F63302002A5E1C /* Components */,
 				A12399D029F632BF002A5E1C /* Search */,
@@ -224,6 +232,14 @@
 				A18D54FA29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift */,
 			);
 			path = SupermarketSpecialsAppUITests;
+			sourceTree = "<group>";
+		};
+		A1D3162D2A08ADCB00AF1739 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				A1D3162E2A08ADE200AF1739 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D3162F2A08ADE200AF1739 /* Store.swift in Sources */,
 				A12399DC29F633CD002A5E1C /* SearchView.swift in Sources */,
 				A12399DF29F63412002A5E1C /* ItemsModel.swift in Sources */,
 				A12399D529F63330002A5E1C /* ItemGroupView.swift in Sources */,
@@ -374,6 +391,7 @@
 				A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */,
 				A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */,
 				A12399DA29F633A6002A5E1C /* NoTruncationText.swift in Sources */,
+				A12399E929FB2887002A5E1C /* ItemDetailsViewModel.swift in Sources */,
 				A12399E129F635D1002A5E1C /* SupermarketNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +553,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SupermarketSpecialsApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SupermarketSpecialsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,6 +582,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SupermarketSpecialsApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SupermarketSpecialsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

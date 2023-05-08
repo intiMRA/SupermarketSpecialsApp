@@ -16,6 +16,7 @@ struct ItemViewModel {
     let size: String
     let supermarket: String
 }
+
 struct ItemView: View {
     let itemModel: ItemViewModel
     let isGrid: Bool
@@ -26,6 +27,14 @@ struct ItemView: View {
             tapAction(itemModel.itemId)
         }) {
             VStack {
+                Button {
+                    Task {
+                        await Store.shared.updateList(with: itemModel)
+                    }
+                } label: {
+                    Text("Add")
+                }
+
                 if isGrid {
                     VStack(spacing: 20) {
                         AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
@@ -33,7 +42,7 @@ struct ItemView: View {
                                 .resizable()
                                 .frame(width: 100, height: 100)
                         } placeholder: {
-                            Rectangle()
+                            RoundedRectangle(cornerRadius: 5)
                                 .fill(.gray)
                                 .frame(width: 100, height: 100)
                         }
@@ -47,7 +56,7 @@ struct ItemView: View {
                                 .resizable()
                                 .frame(width: 100, height: 100)
                         } placeholder: {
-                            Rectangle()
+                            RoundedRectangle(cornerRadius: 5)
                                 .fill(.gray)
                                 .frame(width: 100, height: 100)
                         }

@@ -16,7 +16,7 @@ struct ItemgroupView: View {
                 LazyVGrid(columns: cols) {
                     ForEach(items, id:\.itemId) { item in
                         ItemView(itemModel: .init(
-                            itemId: items[0].itemId,
+                            itemId: item.itemId,
                             name: item.name,
                             photoUrl: item.photoUrl,
                             price: item.price,
@@ -35,16 +35,18 @@ struct ItemgroupView: View {
                 }
             
         } else {
-            ItemView(itemModel: .init(
-                itemId: items[0].itemId,
-                name: items[0].name,
-                photoUrl: items[0].photoUrl,
-                price: items[0].price,
-                brand: items[0].brand,
-                size: items[0].size,
-                supermarket: items[0].supermarket),
-                     isGrid: false,
-                     tapAction: tapAction)
+            if let item = items.first {
+                ItemView(itemModel: .init(
+                    itemId: item.itemId,
+                    name: item.name,
+                    photoUrl: item.photoUrl,
+                    price: item.price,
+                    brand: item.brand,
+                    size: item.size,
+                    supermarket: item.supermarket),
+                         isGrid: false,
+                         tapAction: tapAction)
+            }
         }
     }
 }
