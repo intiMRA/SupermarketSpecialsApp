@@ -28,6 +28,14 @@ struct SupermarketSpecialsAppApp: App {
                     .tabItem {
                         Text("search")
                     }
+                    
+                    NavigationView{
+                        ShoppingListView()
+                            .environmentObject(stack)
+                    }
+                    .tabItem {
+                        Text("list")
+                    }
                 }
                 
             }
