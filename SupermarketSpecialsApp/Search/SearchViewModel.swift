@@ -30,6 +30,7 @@ class SearchViewModel: ObservableObject {
             .eraseToAnyPublisher()
             .sink(receiveValue: { value in
                 if value.count > 3 {
+                    self.state = .loading
                     Task {
                         await self.search(query: value)
                     }
@@ -44,11 +45,10 @@ class SearchViewModel: ObservableObject {
         let request = NetworkLayerRequest(urlBuilder: EndpointUrls.search(newWorlsIds: ["89ba1656-0ad7-4af0-8694-08bf335e99b9"], packNSaveIds: ["21ecaaed-0749-4492-985e-4bb7ba43d59c"], query: query), httpMethod: .GET)
         do {
             items = try await NetworkLayer.defaultNetworkLayer.request(request)
-            state = .showingItems
         } catch {
-            state = .showingItems
             print(error)
         }
+        state = .showingItems
     }
     
     func tapAction(_ itemId: String) {

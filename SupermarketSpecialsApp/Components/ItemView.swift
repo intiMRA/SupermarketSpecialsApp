@@ -29,7 +29,7 @@ struct ItemView: View {
             VStack {
                 Button {
                     Task {
-                        await Store.shared.updateList(with: itemModel)
+                        await Store.shared.updateShoppingList(with: itemModel)
                     }
                 } label: {
                     Text("Add")

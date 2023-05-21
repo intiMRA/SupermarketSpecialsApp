@@ -27,6 +27,10 @@
 		A18D54EF29EF990400E7A697 /* SupermarketSpecialsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54EE29EF990400E7A697 /* SupermarketSpecialsAppTests.swift */; };
 		A18D54F929EF990400E7A697 /* SupermarketSpecialsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54F829EF990400E7A697 /* SupermarketSpecialsAppUITests.swift */; };
 		A18D54FB29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54FA29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift */; };
+		A191B3952A1AC52B00A5E099 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A191B3942A1AC52B00A5E099 /* Lottie */; };
+		A191B3982A1AC55E00A5E099 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191B3972A1AC55E00A5E099 /* LottieView.swift */; };
+		A191B39A2A1ACBDB00A5E099 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A191B3992A1ACBDB00A5E099 /* loading.json */; };
+		A191B39C2A1ACC6A00A5E099 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191B39B2A1ACC6A00A5E099 /* LoadingView.swift */; };
 		A1D3162F2A08ADE200AF1739 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D3162E2A08ADE200AF1739 /* Store.swift */; };
 		A1D316322A08B54B00AF1739 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D316312A08B54B00AF1739 /* ShoppingListView.swift */; };
 		A1D316342A08B5A500AF1739 /* ShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D316332A08B5A500AF1739 /* ShoppingListViewModel.swift */; };
@@ -72,6 +76,9 @@
 		A18D54F429EF990400E7A697 /* SupermarketSpecialsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketSpecialsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18D54F829EF990400E7A697 /* SupermarketSpecialsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppUITests.swift; sourceTree = "<group>"; };
 		A18D54FA29EF990400E7A697 /* SupermarketSpecialsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketSpecialsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A191B3972A1AC55E00A5E099 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		A191B3992A1ACBDB00A5E099 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../../Downloads/loading.json; sourceTree = "<group>"; };
+		A191B39B2A1ACC6A00A5E099 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A1D3162E2A08ADE200AF1739 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		A1D316312A08B54B00AF1739 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
 		A1D316332A08B5A500AF1739 /* ShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModel.swift; sourceTree = "<group>"; };
@@ -84,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10FB92A29EFAA2D002454BD /* NetworkLayerSPM in Frameworks */,
+				A191B3952A1AC52B00A5E099 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +207,7 @@
 		A18D54DC29EF990200E7A697 /* SupermarketSpecialsApp */ = {
 			isa = PBXGroup;
 			children = (
+				A191B3962A1AC54600A5E099 /* Animations */,
 				A1D316302A08B53000AF1739 /* ShoppingList */,
 				A1D3162D2A08ADCB00AF1739 /* Store */,
 				A1E171012A01CB3900B7D577 /* Info.plist */,
@@ -239,6 +248,16 @@
 			path = SupermarketSpecialsAppUITests;
 			sourceTree = "<group>";
 		};
+		A191B3962A1AC54600A5E099 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				A191B3992A1ACBDB00A5E099 /* loading.json */,
+				A191B3972A1AC55E00A5E099 /* LottieView.swift */,
+				A191B39B2A1ACC6A00A5E099 /* LoadingView.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		A1D3162D2A08ADCB00AF1739 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +293,7 @@
 			name = SupermarketSpecialsApp;
 			packageProductDependencies = (
 				A10FB92929EFAA2D002454BD /* NetworkLayerSPM */,
+				A191B3942A1AC52B00A5E099 /* Lottie */,
 			);
 			productName = SupermarketSpecialsApp;
 			productReference = A18D54DA29EF990200E7A697 /* SupermarketSpecialsApp.app */;
@@ -349,6 +369,7 @@
 			mainGroup = A18D54D129EF990200E7A697;
 			packageReferences = (
 				A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */,
+				A191B3932A1AC52B00A5E099 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = A18D54DB29EF990200E7A697 /* Products */;
 			projectDirPath = "";
@@ -368,6 +389,7 @@
 			files = (
 				A18D54E529EF990300E7A697 /* Preview Assets.xcassets in Resources */,
 				A18D54E229EF990300E7A697 /* Assets.xcassets in Resources */,
+				A191B39A2A1ACBDB00A5E099 /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,11 +425,13 @@
 				A12399E429F69837002A5E1C /* ItemDetailsView.swift in Sources */,
 				A10FB92E29EFADD5002454BD /* PagesViewModel.swift in Sources */,
 				A12399E729F69F83002A5E1C /* Destinations.swift in Sources */,
+				A191B3982A1AC55E00A5E099 /* LottieView.swift in Sources */,
 				A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */,
 				A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */,
 				A12399DA29F633A6002A5E1C /* NoTruncationText.swift in Sources */,
 				A12399E929FB2887002A5E1C /* ItemDetailsViewModel.swift in Sources */,
 				A12399E129F635D1002A5E1C /* SupermarketNames.swift in Sources */,
+				A191B39C2A1ACC6A00A5E099 /* LoadingView.swift in Sources */,
 				A1D316342A08B5A500AF1739 /* ShoppingListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,6 +763,14 @@
 				kind = branch;
 			};
 		};
+		A191B3932A1AC52B00A5E099 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,6 +778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */;
 			productName = NetworkLayerSPM;
+		};
+		A191B3942A1AC52B00A5E099 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A191B3932A1AC52B00A5E099 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

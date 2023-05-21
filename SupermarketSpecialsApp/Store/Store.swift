@@ -7,20 +7,25 @@
 
 import Foundation
 protocol StoreProtocol {
-    func updateList(with item: ItemViewModel) async
-    func updateList(with items: [ItemViewModel]) async
+    func updateShoppingList(with item: ItemViewModel) async
+    func updateShoppingList(with items: [ItemViewModel]) async
 }
 
 actor Store: StoreProtocol {
     static let shared = Store()
     private(set) var shoppingList: [ItemViewModel] = []
+    private(set) var pagesLists: [Int: ItemsModel] = [:]
     private init() {}
     
-    func updateList(with item: ItemViewModel) {
+    func updateShoppingList(with item: ItemViewModel) {
         self.shoppingList.append(item)
     }
     
-    func updateList(with items: [ItemViewModel]) {
+    func updateShoppingList(with items: [ItemViewModel]) {
         self.shoppingList = items
+    }
+    
+    func updatePagesList(_ page: Int, itemModel: ItemsModel) {
+        self.pagesLists[page] = itemModel
     }
 }

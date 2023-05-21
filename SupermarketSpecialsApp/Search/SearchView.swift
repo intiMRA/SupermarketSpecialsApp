@@ -12,17 +12,13 @@ struct SearchView: View {
     @EnvironmentObject var router: Router
     var body: some View {
         VStack {
-            ScrollView {
-                switch viewModel.state {
-                case .entry:
-                    EmptyView()
-                case .loading:
-                    VStack {
-                        Spacer()
-                        Text("loading..")
-                        Spacer()
-                    }
-                case .showingItems:
+            switch viewModel.state {
+            case .entry:
+                EmptyView()
+            case .loading:
+                LoadingView()
+            case .showingItems:
+                ScrollView {
                     LazyVStack(spacing: 20) {
                         if let items = viewModel.items?.items {
                             ForEach(0..<items.count, id: \.self) { index in
