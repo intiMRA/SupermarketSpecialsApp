@@ -9,9 +9,36 @@ import SwiftUI
 
 @main
 struct SupermarketSpecialsAppApp: App {
+    @StateObject var stack = Router()
     var body: some Scene {
         WindowGroup {
-            PagesView()
+            NavigationStack(path: $stack.stack) {
+                TabView {
+                    NavigationView{
+                        PagesView()
+                            .environmentObject(stack)
+                    }
+                    .tabItem {
+                        Text("pages")
+                    }
+                    NavigationView{
+                        SearchView()
+                            .environmentObject(stack)
+                    }
+                    .tabItem {
+                        Text("search")
+                    }
+                    
+                    NavigationView{
+                        ShoppingListView()
+                            .environmentObject(stack)
+                    }
+                    .tabItem {
+                        Text("list")
+                    }
+                }
+                
+            }
         }
     }
 }
