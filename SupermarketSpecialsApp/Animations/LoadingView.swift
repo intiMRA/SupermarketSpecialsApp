@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Design_Library
 
 struct LoadingView: View {
     var body: some View {
-        LottieView(lottieFile: .loading)
+        LottieView(lottieFile: .jumpLoading)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

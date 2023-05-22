@@ -1,11 +1,20 @@
 {
   "pins" : [
     {
-      "identity" : "lottie-ios",
+      "identity" : "desing-library-spm",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/airbnb/lottie-ios",
+      "location" : "https://github.com/intiMRA/Desing-Library-SPM",
       "state" : {
-        "revision" : "d6feea26a370019b4d3a85f5984cb95a2734776f",
+        "branch" : "fix-animation",
+        "revision" : "90e5d2716b77d1f1dc580ecfb6d73873c2cade7d"
+      }
+    },
+    {
+      "identity" : "lottie-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-spm",
+      "state" : {
+        "revision" : "60ea4f82fba8b4cb21a75665a889e86ed4d81c6e",
         "version" : "4.2.0"
       }
     },

@@ -19,7 +19,7 @@ struct SearchView: View {
                 LoadingView()
             case .showingItems:
                 ScrollView {
-                    LazyVStack(spacing: 20) {
+                    LazyVStack(spacing: .large) {
                         if let items = viewModel.items?.items {
                             ForEach(0..<items.count, id: \.self) { index in
                                 let itemGroup = items[index]
@@ -27,7 +27,7 @@ struct SearchView: View {
                                     viewModel.tapAction(itemId)
                                     router.stack.append(SearchViewDestinations.itemDetails)
                                 })
-                                .padding(.horizontal, 16)
+                                .padding(.horizontal, .medium)
                             }
                         }
                     }
@@ -39,7 +39,7 @@ struct SearchView: View {
             case .itemDetails:
                 if let currentItem = viewModel.selectedItem, let itemGroup = viewModel.otherItems {
                     ItemDetailsView(viewModel: ItemDetailsViewModel(currentItem: currentItem, itemGroup: itemGroup))
-                        .padding(.horizontal, 16)
+                        .padding(.horizontal, .medium)
                         .environmentObject(router)
                 }
             }
