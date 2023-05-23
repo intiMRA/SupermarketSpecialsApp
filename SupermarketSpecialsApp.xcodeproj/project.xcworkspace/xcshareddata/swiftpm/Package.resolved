@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/intiMRA/Desing-Library-SPM",
       "state" : {
-        "branch" : "fix-animation",
-        "revision" : "90e5d2716b77d1f1dc580ecfb6d73873c2cade7d"
+        "branch" : "main",
+        "revision" : "f4b6abac71110990dccb7817a3e5c93aab55a7a2"
       }
     },
     {
