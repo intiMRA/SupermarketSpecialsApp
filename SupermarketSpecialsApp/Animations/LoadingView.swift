@@ -10,7 +10,7 @@ import Design_Library
 
 struct LoadingView: View {
     var body: some View {
-        LottieView(lottieFile: .jumpLoading)
+        LottieView(lottieFile: .pigeonLoading, loopMode: .repeat(.infinity))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
