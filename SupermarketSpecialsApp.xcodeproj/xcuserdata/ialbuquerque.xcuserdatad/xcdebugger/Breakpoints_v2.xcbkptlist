@@ -3,4 +3,115 @@
    uuid = "8FABCBDE-A258-4901-99AC-1BCA7B7F84A6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2414732A-B007-4BB0-9A7F-7E4541A00F8D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design Library/Animations/LottieView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2414732A-B007-4BB0-9A7F-7E4541A00F8D - ab4418c1589e0b0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Design_Library.LottieView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Design_Library.LottieView&gt;) -&gt; some"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design%20Library/Animations/LottieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "2414732A-B007-4BB0-9A7F-7E4541A00F8D - ab4418c1589e0b0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Design_Library.LottieView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Design_Library.LottieView&gt;) -&gt; some"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design%20Library/Animations/LottieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "2414732A-B007-4BB0-9A7F-7E4541A00F8D - ab4418c1589e0b0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Design_Library.LottieView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Design_Library.LottieView&gt;) -&gt; some"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design%20Library/Animations/LottieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "2414732A-B007-4BB0-9A7F-7E4541A00F8D - ab4418c1589e0b0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Design_Library.LottieView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Design_Library.LottieView&gt;) -&gt; some"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design%20Library/Animations/LottieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "2414732A-B007-4BB0-9A7F-7E4541A00F8D - ab4418c1589e0b0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Design_Library.LottieView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Design_Library.LottieView&gt;) -&gt; some"
+                  moduleName = "SupermarketSpecialsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ialbuquerque/projects/ios/personal/SupermarketSpecialsApp/DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design%20Library/Animations/LottieView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3BD04CD-1180-4C50-9353-C999652C8A0F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DerivedData/SupermarketSpecialsApp/SourcePackages/checkouts/Desing-Library-SPM/Sources/Design Library/Design Library+Bundle.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "module"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

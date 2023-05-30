@@ -36,29 +36,29 @@ struct ItemView: View {
                 }
 
                 if isGrid {
-                    VStack(spacing: 20) {
+                    VStack(spacing: .large) {
                         AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
                             image
                                 .resizable()
-                                .frame(width: 100, height: 100)
+                                .squareFrame(size: .medium)
                         } placeholder: {
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(.gray)
-                                .frame(width: 100, height: 100)
+                                .squareFrame(size: .medium)
                         }
                         NoTruncationText(itemModel.name)
                             .bold()
                     }
                 } else {
-                    HStack(spacing: 20) {
+                    HStack(spacing: .large) {
                         AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
                             image
                                 .resizable()
-                                .frame(width: 100, height: 100)
+                                .squareFrame(size: .medium)
                         } placeholder: {
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(.gray)
-                                .frame(width: 100, height: 100)
+                                .squareFrame(size: .medium)
                         }
                         Spacer()
                         NoTruncationText(itemModel.name)
@@ -70,7 +70,7 @@ struct ItemView: View {
                 NoTruncationText(itemModel.brand)
                     .bold()
                 
-                HStack(spacing: 20) {
+                HStack(spacing: .large) {
                     NoTruncationText(itemModel.price)
                         .bold()
                     
