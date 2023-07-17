@@ -8,7 +8,7 @@ import NetworkLayerSPM
 import Foundation
 
 enum PagesViewState {
-    case loading, listing
+    case loading, listing, category
 }
 
 struct CategoriesModel: Codable {
@@ -47,6 +47,22 @@ class PagesViewModel: ObservableObject {
                 print(error)
             }
             state = .listing
+        }
+    }
+    
+    func fetchItems(with category: String) {
+        Task {
+            state = .loading
+            let request = NetworkLayerRequest(urlBuilder: EndpointUrls.items(newWorlsIds: ["89ba1656-0ad7-4af0-8694-08bf335e99b9"], packNSaveIds: ["21ecaaed-0749-4492-985e-4bb7ba43d59c"], category: category), httpMethod: .GET)
+            do {
+                items = try await NetworkLayer.defaultNetworkLayer.request(request)
+                if let items = items {
+                    await store.updatePagesList(page, itemModel: items)
+                }
+            } catch {
+                print(error)
+            }
+            state = .category
         }
     }
     
@@ -89,5 +105,6 @@ class PagesViewModel: ObservableObject {
     func didSelectCategory(_ category: String) {
         self.selectedCategory = category
         self.showCategories = false
+        fetchItems(with: category)
     }
 }

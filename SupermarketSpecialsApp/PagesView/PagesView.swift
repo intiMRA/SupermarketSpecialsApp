@@ -18,10 +18,12 @@ struct PagesView: View {
             switch viewModel.state {
             case .listing:
                 listings
+                navigationButtons
             case .loading:
                 LoadingView()
+            case .category:
+                listings
             }
-            navigationButtons
         }
         .padding(.horizontal, .medium)
         .task {

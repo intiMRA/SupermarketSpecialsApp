@@ -14,10 +14,12 @@ enum EndpointUrls: NetworkLayerURLBuilder {
         static let newWorlsIds = "newWorldIds"
         static let packNSaveIds = "packNSaveIds"
         static let query = "query"
+        static let categories = "categories"
     }
     
     case pages(newWorlsIds: [String], packNSaveIds: [String], pageNumber: Int)
     case search(newWorlsIds: [String], packNSaveIds: [String], query: String)
+    case items(newWorlsIds: [String], packNSaveIds: [String], category: String)
     case categories
     
     func url() -> URL? {
@@ -39,6 +41,12 @@ enum EndpointUrls: NetworkLayerURLBuilder {
         case .categories:
             let completeUrl = "\(baseUrl)/items/categoryNames"
             url = URL(string: completeUrl)
+        case .items(newWorlsIds: let newWorlsIds, packNSaveIds: let packNSaveIds, category: let category):
+            let completeUrl = "\(baseUrl)/items/category"
+            url = URL(string: completeUrl)
+            queryItems.append(URLQueryItem(name: ParameterKeys.newWorlsIds, value: newWorlsIds.joined(separator: ",")))
+            queryItems.append(URLQueryItem(name: ParameterKeys.packNSaveIds, value: packNSaveIds.joined(separator: ",")))
+            queryItems.append(URLQueryItem(name: ParameterKeys.categories, value: category))
         }
         url?.append(queryItems: queryItems)
         return url
