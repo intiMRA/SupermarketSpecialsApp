@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignLibrary
 
 @main
 struct SupermarketSpecialsAppApp: App {
@@ -19,14 +20,15 @@ struct SupermarketSpecialsAppApp: App {
                             .environmentObject(stack)
                     }
                     .tabItem {
-                        Text("pages")
+                        Icon(iconName: .bag)
                     }
                     NavigationView{
                         SearchView()
                             .environmentObject(stack)
                     }
                     .tabItem {
-                        Text("search")
+                        Image(systemName: "text.magnifyingglass")
+                            .renderingMode(.template)
                     }
                     
                     NavigationView{
@@ -34,7 +36,7 @@ struct SupermarketSpecialsAppApp: App {
                             .environmentObject(stack)
                     }
                     .tabItem {
-                        Text("list")
+                        Icon(iconName: .list)
                     }
                 }
                 

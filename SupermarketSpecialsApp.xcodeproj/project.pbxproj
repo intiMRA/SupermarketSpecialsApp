@@ -21,7 +21,7 @@
 		A12399E429F69837002A5E1C /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E329F69837002A5E1C /* ItemDetailsView.swift */; };
 		A12399E729F69F83002A5E1C /* Destinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E629F69F83002A5E1C /* Destinations.swift */; };
 		A12399E929FB2887002A5E1C /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12399E829FB2887002A5E1C /* ItemDetailsViewModel.swift */; };
-		A16AB43C2A1B27EF00DD3B41 /* Design_Library in Frameworks */ = {isa = PBXBuildFile; productRef = A16AB43B2A1B27EF00DD3B41 /* Design_Library */; };
+		A16BE3F52A2C751200BE455E /* DesignLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A16BE3F42A2C751200BE455E /* DesignLibrary */; };
 		A182040F2A26AEC3003C7DD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A182040E2A26AEC3003C7DD3 /* Localizable.strings */; };
 		A18204112A26AEED003C7DD3 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18204102A26AEED003C7DD3 /* String+Localized.swift */; };
 		A18D54DE29EF990200E7A697 /* SupermarketSpecialsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18D54DD29EF990200E7A697 /* SupermarketSpecialsAppApp.swift */; };
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A16AB43C2A1B27EF00DD3B41 /* Design_Library in Frameworks */,
+				A16BE3F52A2C751200BE455E /* DesignLibrary in Frameworks */,
 				A10FB92A29EFAA2D002454BD /* NetworkLayerSPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +307,7 @@
 			name = SupermarketSpecialsApp;
 			packageProductDependencies = (
 				A10FB92929EFAA2D002454BD /* NetworkLayerSPM */,
-				A16AB43B2A1B27EF00DD3B41 /* Design_Library */,
+				A16BE3F42A2C751200BE455E /* DesignLibrary */,
 			);
 			productName = SupermarketSpecialsApp;
 			productReference = A18D54DA29EF990200E7A697 /* SupermarketSpecialsApp.app */;
@@ -383,7 +383,7 @@
 			mainGroup = A18D54D129EF990200E7A697;
 			packageReferences = (
 				A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */,
-				A16AB4372A1B146A00DD3B41 /* XCRemoteSwiftPackageReference "Desing-Library-SPM" */,
+				A16BE3F32A2C751200BE455E /* XCRemoteSwiftPackageReference "Desing-Library-SPM" */,
 			);
 			productRefGroup = A18D54DB29EF990200E7A697 /* Products */;
 			projectDirPath = "";
@@ -775,11 +775,11 @@
 				kind = branch;
 			};
 		};
-		A16AB4372A1B146A00DD3B41 /* XCRemoteSwiftPackageReference "Desing-Library-SPM" */ = {
+		A16BE3F32A2C751200BE455E /* XCRemoteSwiftPackageReference "Desing-Library-SPM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/intiMRA/Desing-Library-SPM";
 			requirement = {
-				branch = main;
+				branch = "add-icons";
 				kind = branch;
 			};
 		};
@@ -791,10 +791,10 @@
 			package = A10FB92829EFAA2D002454BD /* XCRemoteSwiftPackageReference "NetworkLayerSPM" */;
 			productName = NetworkLayerSPM;
 		};
-		A16AB43B2A1B27EF00DD3B41 /* Design_Library */ = {
+		A16BE3F42A2C751200BE455E /* DesignLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A16AB4372A1B146A00DD3B41 /* XCRemoteSwiftPackageReference "Desing-Library-SPM" */;
-			productName = Design_Library;
+			package = A16BE3F32A2C751200BE455E /* XCRemoteSwiftPackageReference "Desing-Library-SPM" */;
+			productName = DesignLibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

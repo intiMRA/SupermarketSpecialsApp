@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemgroupView: View {
+struct ItemGroupView: View {
     let items: [ItemModel]
     let tapAction: (String) -> Void
     var body: some View {

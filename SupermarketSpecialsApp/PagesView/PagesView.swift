@@ -17,49 +17,11 @@ struct PagesView: View {
             }
             switch viewModel.state {
             case .listing:
-                ScrollView {
-                    LazyVStack(spacing: .large) {
-                        if let items = viewModel.items?.items {
-                            ForEach(0..<items.count, id: \.self) { index in
-                                let itemGroup = items[index]
-                                ItemgroupView(items: itemGroup) { itemId in
-                                    viewModel.tapAction(itemId)
-                                    router.stack.append(PagesViewDestinations.itemDetails)
-                                }
-                            }
-                        }
-                    }
-                }
-                .padding(.top, .medium)
+                listings
             case .loading:
                 LoadingView()
             }
-            
-            HStack {
-                Button {
-                    withAnimation {
-                        viewModel.backPage()
-                    }
-                } label: {
-                    Text("Previous")
-                        .padding(.all, .xxSmall)
-                }
-                .background(Color.mint.opacity(0.7))
-                .cornerRadius(5)
-                
-                Spacer()
-                
-                Button {
-                    withAnimation {
-                        viewModel.nextPage()
-                    }
-                } label: {
-                    Text("next")
-                        .padding(.all, .xxSmall)
-                }
-                .background(Color.mint.opacity(0.7))
-                .cornerRadius(5)
-            }
+            navigationButtons
         }
         .padding(.horizontal, .medium)
         .task {
@@ -77,5 +39,84 @@ struct PagesView: View {
                 }
             }
         }
+        .sheet(isPresented: $viewModel.showCategories) {
+            categoriesList
+        }
+    }
+    
+    @ViewBuilder
+    var listings: some View {
+        ScrollView {
+            let cat = viewModel.selectedCategory ?? "All"
+            Button {
+                viewModel.tappedExpandCategories()
+            } label: {
+                Text("Category: \(cat)")
+            }
+            
+            LazyVStack(spacing: .large) {
+                if let items = viewModel.items?.items {
+                    ForEach(0..<items.count, id: \.self) { index in
+                        let itemGroup = items[index]
+                        ItemGroupView(items: itemGroup) { itemId in
+                            viewModel.tapAction(itemId)
+                            router.stack.append(PagesViewDestinations.itemDetails)
+                        }
+                    }
+                }
+            }
+        }
+        .padding(.top, .medium)
+    }
+    
+    @ViewBuilder
+    var navigationButtons: some View {
+        HStack {
+            Button {
+                withAnimation {
+                    viewModel.backPage()
+                }
+            } label: {
+                Text("Previous")
+                    .padding(.all, .xxSmall)
+            }
+            .background(Color.mint.opacity(0.7))
+            .cornerRadius(5)
+            
+            Spacer()
+            
+            Button {
+                withAnimation {
+                    viewModel.nextPage()
+                }
+            } label: {
+                Text("next")
+                    .padding(.all, .xxSmall)
+            }
+            .background(Color.mint.opacity(0.7))
+            .cornerRadius(5)
+        }
+    }
+    
+    @ViewBuilder
+    var categoriesList: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                ForEach(viewModel.categories, id: \.self) { category in
+                    Button {
+                        withAnimation {
+                            viewModel.didSelectCategory(category)
+                        }
+                    } label: {
+                        HStack {
+                            Text(category)
+                            Spacer()
+                        }
+                    }
+                }
+            }
+            .padding(.all, .medium)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
