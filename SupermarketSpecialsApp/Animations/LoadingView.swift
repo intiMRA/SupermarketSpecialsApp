@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Design_Library
+import DesignLibrary
 
 struct LoadingView: View {
     var body: some View {

@@ -23,7 +23,7 @@ struct SearchView: View {
                         if let items = viewModel.items?.items {
                             ForEach(0..<items.count, id: \.self) { index in
                                 let itemGroup = items[index]
-                                ItemgroupView(items: itemGroup, tapAction: { itemId in
+                                ItemGroupView(items: itemGroup, tapAction: { itemId in
                                     viewModel.tapAction(itemId)
                                     router.stack.append(SearchViewDestinations.itemDetails)
                                 })

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignLibrary
 
 struct ItemDetailsView: View {
     @StateObject var viewModel: ItemDetailsViewModel
@@ -16,27 +17,14 @@ struct ItemDetailsView: View {
     var body: some View {
         VStack {
             VStack {
-                Text(viewModel.currentItem.name)
-                    .font(.title)
-                    .bold()
+                NoTruncationText(viewModel.currentItem.name, isBold: true, font: .title)
+                    .fixedSize(horizontal: true, vertical: false)
                 HStack {
-                    NoTruncationText(viewModel.currentItem.brand)
-                        .font(.title2)
-                        .bold()
+                    NoTruncationText(viewModel.currentItem.brand, isBold: true, font: .title2)
                     
-                    NoTruncationText(viewModel.currentItem.price)
-                        .font(.title2)
-                        .bold()
+                    NoTruncationText(viewModel.currentItem.price, isBold: true, font: .title2)
                 }
-                AsyncImage(url: URL(string: viewModel.currentItem.photoUrl)) { image in
-                    image
-                        .resizable()
-                        .frame(width: 300, height: 300)
-                } placeholder: {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.gray)
-                        .frame(width: 300, height: 300)
-                }
+                ImageView(url: viewModel.currentItem.photoUrl, size: .xLarge)
             }
             .padding()
             .background {
@@ -52,17 +40,8 @@ struct ItemDetailsView: View {
                             }
                         }) {
                             VStack {
-                                AsyncImage(url: URL(string: otherItem.photoUrl)) { image in
-                                    image
-                                        .resizable()
-                                        .frame(width: 100, height: 100)
-                                } placeholder: {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(.gray)
-                                        .frame(width: 100, height: 100)
-                                }
-                                Text(otherItem.name)
-                                    .bold()
+                                ImageView(url: otherItem.photoUrl, size: .medium)
+                                NoTruncationText(otherItem.name, isBold: true)
                             }
                             .padding()
                             .background {
@@ -74,6 +53,22 @@ struct ItemDetailsView: View {
                 }
             }
 
+        }
+    }
+}
+
+struct ImageView: View {
+    let url: String
+    let size: CommonSizes
+    
+    var body: some View {
+        AsyncImage(url: URL(string: url)) { image in
+            image
+                .sized(size: size)
+        } placeholder: {
+            RoundedRectangle(cornerRadius: 10)
+                .fill(.gray)
+                .squareFrame(size: size)
         }
     }
 }

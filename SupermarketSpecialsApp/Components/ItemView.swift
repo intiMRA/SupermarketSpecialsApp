@@ -21,63 +21,74 @@ struct ItemView: View {
     let itemModel: ItemViewModel
     let isGrid: Bool
     let tapAction: (String) -> Void
+    let hasAddButton: Bool
+    
+    init(itemModel: ItemViewModel, isGrid: Bool, tapAction: @escaping (String) -> Void, hasAddButton: Bool = true) {
+        self.itemModel = itemModel
+        self.isGrid = isGrid
+        self.tapAction = tapAction
+        self.hasAddButton = hasAddButton
+    }
     
     var body: some View {
-        Button(action: {
-            tapAction(itemModel.itemId)
-        }) {
-            VStack {
+        VStack {
+            Button(action: {
+                tapAction(itemModel.itemId)
+            }) {
+                VStack {
+                    if isGrid {
+                        VStack(spacing: .large) {
+                            AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
+                                image
+                                    .resizable()
+                                    .squareFrame(size: .medium)
+                            } placeholder: {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(.gray)
+                                    .squareFrame(size: .medium)
+                            }
+                            NoTruncationText(itemModel.name, isBold: true)
+                        }
+                    } else {
+                        HStack(spacing: .large) {
+                            AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
+                                image
+                                    .resizable()
+                                    .squareFrame(size: .medium)
+                            } placeholder: {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(.gray)
+                                    .squareFrame(size: .medium)
+                            }
+                            Spacer()
+                            NoTruncationText(itemModel.name, isBold: true)
+                        }
+                    }
+                    
+                    
+                    NoTruncationText(itemModel.brand, isBold: true)
+                    
+                    HStack(spacing: .large) {
+                        NoTruncationText(itemModel.price, isBold: true)
+                        
+                        NoTruncationText(itemModel.size, isBold: true)
+                    }
+                }
+            }
+            
+            if hasAddButton {
                 Button {
                     Task {
                         await Store.shared.updateShoppingList(with: itemModel)
                     }
                 } label: {
-                    Text("Add")
-                }
-
-                if isGrid {
-                    VStack(spacing: .large) {
-                        AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
-                            image
-                                .resizable()
-                                .squareFrame(size: .medium)
-                        } placeholder: {
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(.gray)
-                                .squareFrame(size: .medium)
-                        }
-                        NoTruncationText(itemModel.name)
-                            .bold()
+                    HStack {
+                        Image(systemName: "plus")
+                        Text("Add")
                     }
-                } else {
-                    HStack(spacing: .large) {
-                        AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
-                            image
-                                .resizable()
-                                .squareFrame(size: .medium)
-                        } placeholder: {
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(.gray)
-                                .squareFrame(size: .medium)
-                        }
-                        Spacer()
-                        NoTruncationText(itemModel.name)
-                            .bold()
-                    }
-                }
-                
-                
-                NoTruncationText(itemModel.brand)
-                    .bold()
-                
-                HStack(spacing: .large) {
-                    NoTruncationText(itemModel.price)
-                        .bold()
-                    
-                    NoTruncationText(itemModel.size)
-                        .bold()
                 }
             }
+
         }
         .padding()
         .background {
