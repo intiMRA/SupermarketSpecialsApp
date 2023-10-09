@@ -15,14 +15,16 @@ struct PagesView: View {
             NavigationLink(value: PagesViewDestinations.itemDetails) {
                 EmptyView()
             }
-            switch viewModel.state {
-            case .listing:
-                listings
-                navigationButtons
-            case .loading:
-                LoadingView()
-            case .category:
-                listings
+            ZStack {
+                switch viewModel.state {
+                case .listing:
+                    listings
+                case .category:
+                    listings
+                }
+                if viewModel.isLoading {
+                    LoadingView()
+                }
             }
         }
         .padding(.horizontal, .medium)
@@ -41,62 +43,34 @@ struct PagesView: View {
                 }
             }
         }
-        .sheet(isPresented: $viewModel.showCategories) {
-            categoriesList
-        }
+        .animation(.default, value: viewModel.items)
     }
     
     @ViewBuilder
     var listings: some View {
-        ScrollView {
-            let cat = viewModel.selectedCategory ?? "All"
-            Button {
-                viewModel.tappedExpandCategories()
-            } label: {
-                Text("Category: \(cat)")
-            }
-            
-            LazyVStack(spacing: .large) {
-                if let items = viewModel.items?.items {
+        ZStack(alignment: .topLeading) {
+            ScrollView {
+                LazyVStack(spacing: .large) {
+                    let items = viewModel.items.items
                     ForEach(0..<items.count, id: \.self) { index in
                         let itemGroup = items[index]
                         ItemGroupView(items: itemGroup) { itemId in
                             viewModel.tapAction(itemId)
                             router.stack.append(PagesViewDestinations.itemDetails)
                         }
+                        .task {
+                            if index == Int(Double(items.count) * 0.8), viewModel.state == .listing {
+                                viewModel.nextPage()
+                            }
+                        }
                     }
                 }
             }
-        }
-        .padding(.top, .medium)
-    }
-    
-    @ViewBuilder
-    var navigationButtons: some View {
-        HStack {
-            Button {
-                withAnimation {
-                    viewModel.backPage()
-                }
-            } label: {
-                Text("Previous")
-                    .padding(.all, .xxSmall)
-            }
-            .background(Color.mint.opacity(0.7))
-            .cornerRadius(5)
+            .padding(.top, .xLarge)
             
-            Spacer()
-            
-            Button {
-                withAnimation {
-                    viewModel.nextPage()
-                }
-            } label: {
-                Text("next")
-                    .padding(.all, .xxSmall)
-            }
-            .background(Color.mint.opacity(0.7))
-            .cornerRadius(5)
+            CategoriesChooser(expandCategory: $viewModel.showCategories, categories: viewModel.categories, selectedCategory: viewModel.selectedCategory, didSelectCategory: { category in
+                viewModel.didSelectCategory(category)
+            })
         }
     }
     

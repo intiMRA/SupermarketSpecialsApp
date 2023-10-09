@@ -10,6 +10,11 @@ import SwiftUI
 
 enum SupermarketNames: String {
     case countdown, newWorld, pakNSave
+    
+    func name() -> String {
+        self.rawValue.localized
+    }
+    
     func color() -> Color {
         switch self {
         case .countdown:

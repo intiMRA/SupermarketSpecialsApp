@@ -8,7 +8,7 @@ import NetworkLayerSPM
 import Foundation
 
 enum PagesViewState {
-    case loading, listing, category
+    case listing, category
 }
 
 struct CategoriesModel: Codable {
@@ -17,9 +17,10 @@ struct CategoriesModel: Codable {
 
 @MainActor
 class PagesViewModel: ObservableObject {
-    @Published var items: ItemsModel?
+    @Published var items = ItemsModel(items: [])
     @Published var page = 1
-    @Published var state: PagesViewState = .loading
+    @Published var state: PagesViewState = .listing
+    @Published var isLoading = true
     @Published var selectedCategory: String?
     @Published var showCategories = false
     @Published var categories: [String] = []
@@ -30,39 +31,44 @@ class PagesViewModel: ObservableObject {
     func fetchPage() {
         Task {
             guard await store.pagesLists[page] == nil else {
-                self.items = await store.pagesLists[page]
+                self.items = await store.allPageItems()
                 state = .listing
                 return
             }
-            
-            state = .loading
+
             await self.fetchCategories()
             let request = NetworkLayerRequest(urlBuilder: EndpointUrls.pages(newWorlsIds: ["89ba1656-0ad7-4af0-8694-08bf335e99b9"], packNSaveIds: ["21ecaaed-0749-4492-985e-4bb7ba43d59c"], pageNumber: page), httpMethod: .GET)
             do {
-                items = try await NetworkLayer.defaultNetworkLayer.request(request)
-                if let items = items {
+                let items: ItemsModel? = try await NetworkLayer.defaultNetworkLayer.request(request)
+                if var items = items {
+                    items = ItemsModel(items: items.items)
                     await store.updatePagesList(page, itemModel: items)
+                    self.items.items.append(contentsOf: items.items)
                 }
             } catch {
                 print(error)
             }
             state = .listing
+            isLoading = false
         }
     }
     
     func fetchItems(with category: String) {
         Task {
-            state = .loading
+            isLoading = true
             let request = NetworkLayerRequest(urlBuilder: EndpointUrls.items(newWorlsIds: ["89ba1656-0ad7-4af0-8694-08bf335e99b9"], packNSaveIds: ["21ecaaed-0749-4492-985e-4bb7ba43d59c"], category: category), httpMethod: .GET)
             do {
-                items = try await NetworkLayer.defaultNetworkLayer.request(request)
-                if let items = items {
-                    await store.updatePagesList(page, itemModel: items)
+                let items: ItemsModel? = try await NetworkLayer.defaultNetworkLayer.request(request)
+                if var items = items {
+                    // TODO: change in server
+                    items = ItemsModel(items: items.items)
+                    self.items = items
                 }
             } catch {
                 print(error)
             }
             state = .category
+            isLoading = false
         }
     }
     
@@ -91,20 +97,21 @@ class PagesViewModel: ObservableObject {
         self.fetchPage()
     }
     
-    func backPage() {
-        page = page > 2 ? page - 1 : 1
-        self.fetchPage()
-    }
-    
     func tapAction(_ itemId: String) {
-        let itemGroup = items?.items.filter({ $0.contains { $0.itemId == itemId } })
-        selectedItem = itemGroup?.first?.first(where: { $0.itemId == itemId })
-        otherItems = itemGroup?.first?.filter { $0.itemId != itemId }
+        let itemGroup = items.items.filter({ $0.contains { $0.itemId == itemId } })
+        selectedItem = itemGroup.first?.first(where: { $0.itemId == itemId })
+        otherItems = itemGroup.first?.filter { $0.itemId != itemId }
     }
     
     func didSelectCategory(_ category: String) {
         self.selectedCategory = category
-        self.showCategories = false
-        fetchItems(with: category)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.showCategories = false
+            if category.isEmpty {
+                self.fetchPage()
+            } else {
+                self.fetchItems(with: category)
+            }
+        }
     }
 }

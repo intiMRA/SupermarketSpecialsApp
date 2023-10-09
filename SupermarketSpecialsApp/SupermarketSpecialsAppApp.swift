@@ -20,15 +20,21 @@ struct SupermarketSpecialsAppApp: App {
                             .environmentObject(stack)
                     }
                     .tabItem {
-                        Icon(iconName: .bag)
+                        VStack {
+                            Icon(iconName: .bag)
+                            Text("Browse")
+                        }
                     }
                     NavigationView{
                         SearchView()
                             .environmentObject(stack)
                     }
                     .tabItem {
-                        Image(systemName: "text.magnifyingglass")
-                            .renderingMode(.template)
+                        VStack {
+                            Image(systemName: "text.magnifyingglass")
+                                .renderingMode(.template)
+                            Text("Search")
+                        }
                     }
                     
                     NavigationView{
@@ -36,7 +42,10 @@ struct SupermarketSpecialsAppApp: App {
                             .environmentObject(stack)
                     }
                     .tabItem {
-                        Icon(iconName: .list)
+                        VStack {
+                            Icon(iconName: .list)
+                            Text("Groceries List")
+                        }
                     }
                 }
                 

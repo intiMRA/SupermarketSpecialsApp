@@ -33,4 +33,12 @@ actor Store: StoreProtocol {
     func updateCategoryNamesLists(list: [String]) {
         self.categoryNamesLists = list
     }
+    
+    func allPageItems() -> ItemsModel {
+        self.pagesLists.reduce(ItemsModel(items: [])) { partialResult, kv in
+            var items = partialResult.items
+            items.append(contentsOf: kv.value.items)
+            return ItemsModel(items: items)
+        }
+    }
 }

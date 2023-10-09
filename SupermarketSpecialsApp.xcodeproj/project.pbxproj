@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A104F0522A77160800D2D98F /* CategoriesChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104F0512A77160800D2D98F /* CategoriesChooser.swift */; };
 		A10FB92729EFA9B1002454BD /* EndpointUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92629EFA9B1002454BD /* EndpointUrls.swift */; };
 		A10FB92A29EFAA2D002454BD /* NetworkLayerSPM in Frameworks */ = {isa = PBXBuildFile; productRef = A10FB92929EFAA2D002454BD /* NetworkLayerSPM */; };
 		A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92B29EFADC2002454BD /* PagesView.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A104F0512A77160800D2D98F /* CategoriesChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesChooser.swift; sourceTree = "<group>"; };
 		A10FB92629EFA9B1002454BD /* EndpointUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointUrls.swift; sourceTree = "<group>"; };
 		A10FB92B29EFADC2002454BD /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		A10FB92D29EFADD5002454BD /* PagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewModel.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				A12399D829F6337F002A5E1C /* Utils */,
 				A12399D429F63330002A5E1C /* ItemGroupView.swift */,
 				A12399D629F63344002A5E1C /* ItemView.swift */,
+				A104F0512A77160800D2D98F /* CategoriesChooser.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				A1D316322A08B54B00AF1739 /* ShoppingListView.swift in Sources */,
 				A1D3162F2A08ADE200AF1739 /* Store.swift in Sources */,
 				A12399DC29F633CD002A5E1C /* SearchView.swift in Sources */,
+				A104F0522A77160800D2D98F /* CategoriesChooser.swift in Sources */,
 				A18204112A26AEED003C7DD3 /* String+Localized.swift in Sources */,
 				A12399DF29F63412002A5E1C /* ItemsModel.swift in Sources */,
 				A12399D529F63330002A5E1C /* ItemGroupView.swift in Sources */,

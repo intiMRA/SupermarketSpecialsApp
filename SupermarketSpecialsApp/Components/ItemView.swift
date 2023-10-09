@@ -35,19 +35,21 @@ struct ItemView: View {
             Button(action: {
                 tapAction(itemModel.itemId)
             }) {
-                VStack {
+                VStack(alignment: .leading, spacing: .xSmall) {
                     if isGrid {
                         VStack(spacing: .large) {
                             AsyncImage(url: URL(string: itemModel.photoUrl)) { image in
                                 image
                                     .resizable()
                                     .squareFrame(size: .medium)
+                                    .cornerRadius(5)
                             } placeholder: {
                                 RoundedRectangle(cornerRadius: 5)
                                     .fill(.gray)
                                     .squareFrame(size: .medium)
+                                    .cornerRadius(5)
                             }
-                            NoTruncationText(itemModel.name, isBold: true)
+                            NoTruncationText(itemModel.name, isBold: true, font: .headline)
                         }
                     } else {
                         HStack(spacing: .large) {
@@ -55,13 +57,15 @@ struct ItemView: View {
                                 image
                                     .resizable()
                                     .squareFrame(size: .medium)
+                                    .cornerRadius(5)
                             } placeholder: {
                                 RoundedRectangle(cornerRadius: 5)
                                     .fill(.gray)
                                     .squareFrame(size: .medium)
+                                    .cornerRadius(5)
                             }
                             Spacer()
-                            NoTruncationText(itemModel.name, isBold: true)
+                            NoTruncationText(itemModel.name, isBold: true, font: .headline)
                         }
                     }
                     
@@ -69,9 +73,9 @@ struct ItemView: View {
                     NoTruncationText(itemModel.brand, isBold: true)
                     
                     HStack(spacing: .large) {
-                        NoTruncationText(itemModel.price, isBold: true)
+                        NoTruncationText("$\(itemModel.price)", isBold: true, font: .subheadline)
                         
-                        NoTruncationText(itemModel.size, isBold: true)
+                        NoTruncationText(itemModel.size, isBold: true, font: .subheadline)
                     }
                 }
             }
@@ -84,7 +88,7 @@ struct ItemView: View {
                 } label: {
                     HStack {
                         Image(systemName: "plus")
-                        Text("Add")
+                        Text("Add to list")
                     }
                 }
             }

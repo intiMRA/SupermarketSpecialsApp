@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemModel: Codable {
+struct ItemModel: Codable, Equatable {
     let brand: String
     let category: String
     let itemId: String
@@ -19,8 +19,12 @@ struct ItemModel: Codable {
     let supermarketId: String?
 }
 
-struct ItemsModel: Codable {
-    let items: [[ItemModel]]
+struct ItemsModel: Codable, Equatable {
+    var items: [[ItemModel]]
+    
+    init(items: [[ItemModel]]) {
+        self.items = items
+    }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
