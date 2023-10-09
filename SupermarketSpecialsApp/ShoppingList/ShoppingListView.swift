@@ -13,28 +13,31 @@ struct ShoppingListView: View {
     var body: some View {
         List {
             ForEach(viewModel.groupedList, id:\.key) { itemGroup in
-                Section {
-                    ForEach(itemGroup.value, id:\.itemId) { item in
-                        NavigationLink(destination: { ItemView( itemModel: item, isGrid: false, tapAction: { _ in }, hasAddButton: false)}) {
-                            HStack {
-                                Text(item.name)
-                                    .foregroundColor(.black)
-                                Spacer()
-                                Text(item.price)
-                                    .foregroundColor(.black)
+                if let superMarket = SupermarketNames(rawValue: itemGroup.key) {
+                    Section {
+                        ForEach(itemGroup.value, id:\.itemId) { item in
+                            NavigationLink(destination: { ItemView( itemModel: item, isGrid: false, tapAction: { _ in }, hasAddButton: false)}) {
+                                HStack {
+                                    Text(item.name)
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                    Text(item.price)
+                                        .foregroundColor(.black)
+                                }
+                                .frame(minHeight: 44)
                             }
-                            .frame(minHeight: 44)
                         }
+                    } header: {
+                        Text(superMarket.name())
+                            .bold()
                     }
-                } header: {
-                    Text(SupermarketNames(rawValue: itemGroup.key)?.name() ?? "")
-                        .bold()
+                    .listRowBackground(superMarket.color())
                 }
             }
-            .task {
-                viewModel.reload()
-            }
         }
-        .padding(.horizontal, .medium)
+        .listStyle(.sidebar)
+        .task {
+            viewModel.reload()
+        }
     }
 }
