@@ -8,14 +8,18 @@
 import Foundation
 import SwiftUI
 
-enum PagesViewDestinations: String {
-    case itemDetails
-}
-
-enum SearchViewDestinations: String {
-    case itemDetails
+enum Destination: Hashable, Equatable {
+    case itemDetails(ItemDetailsViewModel)
 }
 
 class Router: ObservableObject {
     @Published var stack = NavigationPath()
+    
+    func navigate(to destination: Destination) {
+        stack.append(destination)
+    }
+    
+    func pop() {
+        stack.removeLast()
+    }
 }

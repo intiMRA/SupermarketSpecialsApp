@@ -12,9 +12,6 @@ struct PagesView: View {
     @EnvironmentObject var router: Router
     var body: some View {
         VStack(spacing: .empty) {
-            NavigationLink(value: PagesViewDestinations.itemDetails) {
-                EmptyView()
-            }
             ZStack {
                 switch viewModel.state {
                 case .listing:
@@ -33,16 +30,6 @@ struct PagesView: View {
                 viewModel.fetchPage()
             }
         }
-        .navigationDestination(for: PagesViewDestinations.self) { nextView in
-            switch nextView {
-            case .itemDetails:
-                if let currentItem = viewModel.selectedItem, let itemGroup = viewModel.otherItems {
-                    ItemDetailsView(viewModel: ItemDetailsViewModel(currentItem: currentItem, itemGroup: itemGroup))
-                        .padding(.horizontal, .medium)
-                        .environmentObject(router)
-                }
-            }
-        }
         .animation(.default, value: viewModel.items)
     }
     
@@ -55,8 +42,12 @@ struct PagesView: View {
                     ForEach(0..<items.count, id: \.self) { index in
                         let itemGroup = items[index]
                         ItemGroupView(items: itemGroup) { itemId in
-                            viewModel.tapAction(itemId)
-                            router.stack.append(PagesViewDestinations.itemDetails)
+                            Task {
+                                await viewModel.tapAction(itemId)
+                                if let currentItem = viewModel.selectedItem, let itemGroup = viewModel.otherItems {
+                                    router.navigate(to: .itemDetails(.init(currentItem: currentItem, itemGroup: itemGroup)))
+                                }
+                            }
                         }
                         .task {
                             if index == Int(Double(items.count) * 0.8), viewModel.state == .listing {

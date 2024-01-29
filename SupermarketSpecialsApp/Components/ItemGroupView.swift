@@ -14,7 +14,7 @@ struct ItemGroupView: View {
         if items.count > 1 {
             let cols: [GridItem] = [GridItem(.adaptive(minimum: 100)), GridItem(.adaptive(minimum: 100))]
                 LazyVGrid(columns: cols) {
-                    ForEach(items, id:\.itemId) { item in
+                    ForEach(items.sorted(by: { $0.price < $1.price }), id:\.itemId) { item in
                         ItemView(itemModel: .init(
                             itemId: item.itemId,
                             name: item.name,

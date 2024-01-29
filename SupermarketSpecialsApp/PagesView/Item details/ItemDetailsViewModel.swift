@@ -7,16 +7,26 @@
 
 import Foundation
 
-@MainActor
-class ItemDetailsViewModel: ObservableObject {
-    @Published var currentItem: ItemModel
-    @Published var itemGroup: [ItemModel]
+class ItemDetailsViewModel: ObservableObject, Equatable, Hashable {
+    static func == (lhs: ItemDetailsViewModel, rhs: ItemDetailsViewModel) -> Bool {
+        lhs.currentItem == rhs.currentItem
+        && lhs.itemGroup == rhs.itemGroup
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(currentItem)
+        hasher.combine(itemGroup)
+    }
+    
+    @Published private(set) var currentItem: ItemModel
+    @Published private(set) var itemGroup: [ItemModel]
     
     init(currentItem: ItemModel, itemGroup: [ItemModel]) {
         self.currentItem = currentItem
         self.itemGroup = itemGroup
     }
     
+    @MainActor
     func didSelectItem(with itemId: String) {
         var allItems = itemGroup
         allItems.append(currentItem)
@@ -28,3 +38,4 @@ class ItemDetailsViewModel: ObservableObject {
         self.itemGroup = allItems
     }
 }
+

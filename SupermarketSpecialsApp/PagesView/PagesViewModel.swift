@@ -97,7 +97,7 @@ class PagesViewModel: ObservableObject {
         self.fetchPage()
     }
     
-    func tapAction(_ itemId: String) {
+    func tapAction(_ itemId: String) async {
         let itemGroup = items.items.filter({ $0.contains { $0.itemId == itemId } })
         selectedItem = itemGroup.first?.first(where: { $0.itemId == itemId })
         otherItems = itemGroup.first?.filter { $0.itemId != itemId }

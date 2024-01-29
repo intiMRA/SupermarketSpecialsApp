@@ -19,11 +19,13 @@ struct NoTruncationText: View {
     }
     
     var body: some View {
-        Text(text)
-            .bold(isBold)
-            .font(font)
-            .foregroundColor(.black)
-            .lineLimit(nil)
-            .multilineTextAlignment(.leading)
+        HStack {
+            Text(text)
+                .lineLimit(nil)
+                .multilineTextAlignment(.leading)
+                .bold(isBold)
+                .font(font)
+                .foregroundColor(.black)
+        }
     }
 }

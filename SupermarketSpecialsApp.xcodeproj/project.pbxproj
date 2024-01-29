@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A104F0522A77160800D2D98F /* CategoriesChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104F0512A77160800D2D98F /* CategoriesChooser.swift */; };
+		A10C648B2AD3906E00022FF5 /* Swift+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10C648A2AD3906E00022FF5 /* Swift+Formatting.swift */; };
 		A10FB92729EFA9B1002454BD /* EndpointUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92629EFA9B1002454BD /* EndpointUrls.swift */; };
 		A10FB92A29EFAA2D002454BD /* NetworkLayerSPM in Frameworks */ = {isa = PBXBuildFile; productRef = A10FB92929EFAA2D002454BD /* NetworkLayerSPM */; };
 		A10FB92C29EFADC2002454BD /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10FB92B29EFADC2002454BD /* PagesView.swift */; };
@@ -56,6 +57,9 @@
 
 /* Begin PBXFileReference section */
 		A104F0512A77160800D2D98F /* CategoriesChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesChooser.swift; sourceTree = "<group>"; };
+		A10C64882AD38F3500022FF5 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		A10C64892AD38F8000022FF5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		A10C648A2AD3906E00022FF5 /* Swift+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Formatting.swift"; sourceTree = "<group>"; };
 		A10FB92629EFA9B1002454BD /* EndpointUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointUrls.swift; sourceTree = "<group>"; };
 		A10FB92B29EFADC2002454BD /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		A10FB92D29EFADD5002454BD /* PagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10C64872AD38F1100022FF5 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A10C64882AD38F3500022FF5 /* Development.xcconfig */,
+				A10C64892AD38F8000022FF5 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		A10FB92429EFA97C002454BD /* PagesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 			children = (
 				A12399D929F633A6002A5E1C /* NoTruncationText.swift */,
 				A12399E029F635D1002A5E1C /* SupermarketNames.swift */,
+				A10C648A2AD3906E00022FF5 /* Swift+Formatting.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -206,6 +220,7 @@
 		A18D54D129EF990200E7A697 = {
 			isa = PBXGroup;
 			children = (
+				A10C64872AD38F1100022FF5 /* Config */,
 				A182040D2A26AEA7003C7DD3 /* Resources */,
 				A18D54DC29EF990200E7A697 /* SupermarketSpecialsApp */,
 				A18D54ED29EF990400E7A697 /* SupermarketSpecialsAppTests */,
@@ -434,6 +449,7 @@
 				A1D316322A08B54B00AF1739 /* ShoppingListView.swift in Sources */,
 				A1D3162F2A08ADE200AF1739 /* Store.swift in Sources */,
 				A12399DC29F633CD002A5E1C /* SearchView.swift in Sources */,
+				A10C648B2AD3906E00022FF5 /* Swift+Formatting.swift in Sources */,
 				A104F0522A77160800D2D98F /* CategoriesChooser.swift in Sources */,
 				A18204112A26AEED003C7DD3 /* String+Localized.swift in Sources */,
 				A12399DF29F63412002A5E1C /* ItemsModel.swift in Sources */,
@@ -489,6 +505,7 @@
 /* Begin XCBuildConfiguration section */
 		A18D54FC29EF990400E7A697 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10C64882AD38F3500022FF5 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -549,6 +566,7 @@
 		};
 		A18D54FD29EF990400E7A697 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10C64892AD38F8000022FF5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

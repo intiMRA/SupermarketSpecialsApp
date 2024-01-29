@@ -11,7 +11,7 @@ struct ItemViewModel {
     let itemId: String
     let name: String
     let photoUrl: String
-    let price: String
+    let price: Double
     let brand: String
     let size: String
     let supermarket: String
@@ -73,7 +73,7 @@ struct ItemView: View {
                     NoTruncationText(itemModel.brand, isBold: true)
                     
                     HStack(spacing: .large) {
-                        NoTruncationText("$\(itemModel.price)", isBold: true, font: .subheadline)
+                        NoTruncationText(itemModel.price.asCurrencyString(), isBold: true, font: .subheadline)
                         
                         NoTruncationText(itemModel.size, isBold: true, font: .subheadline)
                     }

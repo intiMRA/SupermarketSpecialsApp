@@ -15,45 +15,47 @@ struct ItemDetailsView: View {
     }
     
     var body: some View {
-        VStack {
+        Group {
             VStack {
-                NoTruncationText(viewModel.currentItem.name, isBold: true, font: .title)
-                    .fixedSize(horizontal: true, vertical: false)
-                HStack {
-                    NoTruncationText(viewModel.currentItem.brand, isBold: true, font: .title2)
-                    
-                    NoTruncationText(viewModel.currentItem.price, isBold: true, font: .title2)
+                VStack {
+                    NoTruncationText(viewModel.currentItem.name, isBold: true, font: .title)
+                    HStack {
+                        NoTruncationText(viewModel.currentItem.brand, isBold: true, font: .title2)
+                        
+                        NoTruncationText(viewModel.currentItem.price.asCurrencyString(), isBold: true, font: .title2)
+                    }
+                    ImageView(url: viewModel.currentItem.photoUrl, size: .xLarge)
                 }
-                ImageView(url: viewModel.currentItem.photoUrl, size: .xLarge)
-            }
-            .padding()
-            .background {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(SupermarketNames(rawValue: viewModel.currentItem.supermarket)?.color() ?? .white)
-            }
-            ScrollView(.horizontal) {
-                LazyHStack(spacing: 20) {
-                    ForEach(viewModel.itemGroup, id: \.itemId) { otherItem in
-                        Button(action: {
-                            withAnimation {
-                                viewModel.didSelectItem(with: otherItem.itemId)
-                            }
-                        }) {
-                            VStack {
-                                ImageView(url: otherItem.photoUrl, size: .medium)
-                                NoTruncationText(otherItem.name, isBold: true)
-                            }
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(SupermarketNames(rawValue: otherItem.supermarket)?.color() ?? .white)
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(SupermarketNames(rawValue: viewModel.currentItem.supermarket)?.color() ?? .white)
+                }
+                ScrollView(.horizontal) {
+                    LazyHStack(spacing: 20) {
+                        ForEach(viewModel.itemGroup.sorted(by: { $0.price < $1.price }), id: \.itemId) { otherItem in
+                            Button(action: {
+                                withAnimation {
+                                    viewModel.didSelectItem(with: otherItem.itemId)
+                                }
+                            }) {
+                                VStack {
+                                    ImageView(url: otherItem.photoUrl, size: .medium)
+                                    NoTruncationText(otherItem.name, isBold: true)
+                                    NoTruncationText(otherItem.price.asCurrencyString(), isBold: true)
+                                }
+                                .padding()
+                                .background {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(SupermarketNames(rawValue: otherItem.supermarket)?.color() ?? .white)
+                                }
                             }
                         }
                     }
                 }
             }
-
         }
+        .animation(.smooth, value: viewModel.currentItem)
     }
 }
 

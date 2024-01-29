@@ -21,7 +21,7 @@ struct ShoppingListView: View {
                                     Text(item.name)
                                         .foregroundColor(.black)
                                     Spacer()
-                                    Text(item.price)
+                                    Text(item.price.asCurrencyString())
                                         .foregroundColor(.black)
                                 }
                                 .frame(minHeight: 44)

@@ -10,14 +10,14 @@ import DesignLibrary
 
 @main
 struct SupermarketSpecialsAppApp: App {
-    @StateObject var stack = Router()
+    @StateObject var router = Router()
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $stack.stack) {
+            NavigationStack(path: $router.stack) {
                 TabView {
                     NavigationView{
                         PagesView()
-                            .environmentObject(stack)
+                            .environmentObject(router)
                     }
                     .tabItem {
                         VStack {
@@ -27,7 +27,7 @@ struct SupermarketSpecialsAppApp: App {
                     }
                     NavigationView{
                         SearchView()
-                            .environmentObject(stack)
+                            .environmentObject(router)
                     }
                     .tabItem {
                         VStack {
@@ -37,9 +37,9 @@ struct SupermarketSpecialsAppApp: App {
                         }
                     }
                     
-                    NavigationView{
+                    NavigationView {
                         ShoppingListView()
-                            .environmentObject(stack)
+                            .environmentObject(router)
                     }
                     .tabItem {
                         VStack {
@@ -48,7 +48,14 @@ struct SupermarketSpecialsAppApp: App {
                         }
                     }
                 }
-                
+                .navigationDestination(for: Destination.self) { nextView in
+                    switch nextView {
+                    case .itemDetails(let viewModel):
+                        ItemDetailsView(viewModel: viewModel)
+                            .padding(.horizontal, .medium)
+                            .environmentObject(router)
+                    }
+                }
             }
         }
     }
